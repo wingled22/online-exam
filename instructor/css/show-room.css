@@ -125,3 +125,24 @@ dialog form button{
     border-radius : 2px;
 
 }
+
+
+
+@media(max-width: 500px){
+
+    *{
+        font-size: 20px;
+    }
+
+    body{
+        margin: 5px;
+        padding:5px;
+    }
+
+    div#banner{
+        display: none;
+
+    }
+
+   
+}

@@ -384,6 +384,9 @@
 
     <dialog id="add_question" >
         <form id="add-exam" action="add-exam_details.php" method="post">
+            <section>
+                <h3>Add Question</h3>
+            </section>
         <select id= "add_question_type"  name="question_type">
             <option id="multiple_choice" value="multiple_choice">Multiple Choice</option>
             <option id="true_or_false" value="true_or_false">True or false</option>
@@ -405,7 +408,7 @@
     <dialog id="favDialog"> 
         <form id="form-dialog" method="post" action="update-exam_details.php">
             <section>
-                <h3>Update Exam Detail</h3>
+                <h3>Update Question</h3>
             </section>
             <SECTION>
                  <select name="update_question_type" id="update_question_type">

@@ -92,7 +92,7 @@ form#add-exam input{
 	padding: 5px;
 	margin-top: 5px;
 
-	font-size: 20px;
+	/*font-size: 20px;*/
 	line-height: 20px;
 	margin-top: 10px; 
 	border-style: hidden;
@@ -102,7 +102,7 @@ form#add-exam select{
 	width: 98.8%;
 	padding: 5px;
 	margin-top: 5px;
-	font-size: 20px;
+	/*font-size: 20px;*/
 	line-height: 20px;
 	margin-top: 10px; 
 	border-style: hidden;
@@ -114,7 +114,7 @@ form#add-exam textarea{
 	height: 50px;
 	padding: 5px;
 	margin-top: 5px;
-	font-size: 20px;
+	/*font-size: 20px;*/
 	line-height: 20px;
 	margin-top: 10px; 
 	border-style: hidden;
@@ -125,7 +125,7 @@ form#add-exam textarea{
 	height: 50px;
 	padding: 5px;
 	margin-top: 5px;
-	font-size: 20px;
+	/*font-size: 20px;*/
 	line-height: 20px;
 	margin-top: 10px; 
 	border-style: hidden;
@@ -135,11 +135,12 @@ form#add-exam textarea{
 
 dialog{
 	position: fixed;
+	overflow: scroll;
 	padding: 10px;
 	float: left;
 	width: 50%;
 	height: auto;	
-	top: 40px;
+	top: 20px;
 
 	background-color: #f1f1f1;
 }
@@ -212,8 +213,8 @@ dialog form button{
 	}
 
 	body{
-		margin: 5px;
-		padding:5px;
+		margin: 0px;
+		padding:0px;
 	}
 
 	div#banner{
@@ -221,10 +222,28 @@ dialog form button{
 
 	}
 
-	.tabs button{
-		background: #92e0ec;
-		border: none;
-		display: block;
-		width: 100%;
+
+	#exam_details_table > *{
+		width: 400px;
+		/*margin: auto*/
+		padding: 0px;
+		margin-top: 0px;
+		margin-bottom: 0px;
+		margin-right: 0px;
+		margin-left: 0px;
+	}
+
+	dialog{
+		width: 400px;
+		font-size: 20px;
+		margin: 2px;
+		padding: 2px;
+	}
+
+	dialog{
+		width: 400px;
+		font-size: 20px;
+		margin: 2px;
+		padding: 2px;
 	}
 }

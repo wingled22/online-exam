@@ -49,3 +49,32 @@ div.center-div menu button a{
 	line-height: 60px;
 	font-size: 20px;
 }
+
+
+
+
+@media(max-width: 500px){
+
+	*{
+		font-size: 20px;
+		width: 100%;
+		margin: 0px;
+		padding: 2px;
+	}
+
+	body{
+		/*margin: 5px;*/
+		padding:5px;
+	}
+
+	div#banner{
+		display: none;
+
+	}
+
+	.center-div{
+		margin: auto;
+		width: 370px;
+	}
+
+}

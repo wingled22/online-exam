@@ -134,6 +134,28 @@ echo "<button><a href=\"dashboard.php\">Go back to dashboard</a></button>";
 
 mysqli_close($conn);
 
+
+ $sql ="SELECT * FROM rooms where room_id =".$_SESSION['student_room_id'];
+$conn = mysqli_connect("localhost", "root", "", "sad");
+
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}else{
+   
+    $result = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($result) > 0) {
+	while($row = mysqli_fetch_object($result)) {
+  		if($row->reviewable == 1){
+			echo "<button><a href=\"review.php\">Review</a></button>";
+  		}
+
+    }
+}
+}
+
+
 ?>
 
 	</div>

@@ -140,6 +140,7 @@ if (!isset($_SESSION['student_room_id'])&&!isset($_SESSION['student_room_name'])
 		   		}
 	   		}
 
+	   		
 
 
 ///////////code for the shuffle //////////////////////////////////////////////////////////////////// 	        
@@ -179,20 +180,20 @@ if (!isset($_SESSION['student_room_id'])&&!isset($_SESSION['student_room_name'])
 
 		   				string_to_be_html = string_to_be_html + "<form class=\"form\">";
 		   				
-	  					string_to_be_html = string_to_be_html + "<div><button class=\"" + items[i].item_id + "\"> "+ arr[0] + " </button></div>";
+	  					string_to_be_html = string_to_be_html + "<div><button class=\"" + items[i].item_id + "\">"+ arr[0] + "</button></div>";
 						
-						string_to_be_html = string_to_be_html + "<div><button class=\"" + items[i].item_id + "\"> "+ arr[1] + " </button></div>";
+						string_to_be_html = string_to_be_html + "<div><button class=\"" + items[i].item_id + "\">"+ arr[1] + "</button></div>";
 						
-						 string_to_be_html = string_to_be_html + "<div><button class=\"" + items[i].item_id + "\"> "+ arr[2] + " </button></div>";
+						 string_to_be_html = string_to_be_html + "<div><button class=\"" + items[i].item_id + "\">"+ arr[2] + "</button></div>";
 						
-						 string_to_be_html = string_to_be_html + "<div><button class=\"" + items[i].item_id + "\"> "+ arr[3] + " </button></div>";
+						 string_to_be_html = string_to_be_html + "<div><button class=\"" + items[i].item_id + "\">"+ arr[3] + "</button></div>";
 						string_to_be_html = string_to_be_html + "</form>";
 		   			}else if(items[i].item_qtn_type == "True_or_false"){
 		   				string_to_be_html = string_to_be_html + "<form class=\"form\">";
 		   				
-	  					string_to_be_html = string_to_be_html + "<div><input type=\'radio\' class=\'input\' name=\'" + items[i].item_id + "\' value=\'"+ 'True' + "\'>" + "True" + "</div>";
+	  					string_to_be_html = string_to_be_html + "<div> <button class=\"\">True</button></div>";
 						
-						string_to_be_html = string_to_be_html + "<div><input type=\'radio\' class=\'input\' name=\'" + items[i].item_id + "\' value=\'"+ 'False' + "\'>" + 'False' + "</div>";
+						string_to_be_html = string_to_be_html + "<div> <button class=\"\">False</button></div>";
 						
 						string_to_be_html = string_to_be_html + "</form>";
 		   			}else{
@@ -290,37 +291,37 @@ if (!isset($_SESSION['student_room_id'])&&!isset($_SESSION['student_room_name'])
 				var item_id = parseInt($(questions[slideIndex-1]).find('.item_id').text());;
 				var ans;
 
-				ans = $(questions[slideIndex-1]).find('div input.input:checked').val();
-				// if($(questions[slideIndex-1]).find('form').length ){
+				if($(questions[slideIndex-1]).find('form').length ){
 
-				// 	if($(questions[slideIndex-1]).find('form.form').has('div').length ) {
+					if($(questions[slideIndex-1]).find('form.form').has('div').length ) {
 						
-				// 		ans = $(questions[slideIndex-1]).find('div input.input:checked').val();
-				// 		if(ans == undefined){
-				// 			ans=""
-				// 		}	
-				// 	}else{
-				// 		ans = $(questions[slideIndex-1]).find('textarea').val();					
-				// 	}
-				// }else{
-				// 	ans = '';
-				// }
+						ans = $(questions[slideIndex-1]).find('div.selected button').html();
+
+						if(ans == undefined){
+							ans=""
+						}	
+					}else{
+						ans = $(questions[slideIndex-1]).find('textarea').val();					
+					}
+				}else{
+					ans = '';
+				}
 
 				console.log(item_id +' : '+ ans);
 
-				// $.ajax({
-    //                     url:    'send_answer.php',
-    //                     method: 'post',
-    //                     data: {
-    //                         student_id 		:<?php echo $_SESSION['student_id'];?>,
-    //                         room_id 		:<?php echo $_SESSION['student_room_id'];?>,
-    //                         item_id 		:item_id,
-    //                         answer 			:ans
-    //                     },
-    //                     datatype: 'text',
-    //                     success: function(string){
-    //                     }
-    //             });
+				$.ajax({
+                        url:    'send_answer.php',
+                        method: 'post',
+                        data: {
+                            student_id 		:<?php echo $_SESSION['student_id'];?>,
+                            room_id 		:<?php echo $_SESSION['student_room_id'];?>,
+                            item_id 		:item_id,
+                            answer 			:ans
+                        },
+                        datatype: 'text',
+                        success: function(string){
+                        }
+                });
 
 				
 			}
@@ -333,12 +334,25 @@ if (!isset($_SESSION['student_room_id'])&&!isset($_SESSION['student_room_name'])
 				buttons.children('div').removeClass('selected');
 				$(this).closest('div').addClass('selected');
 			});
+
+
+	   		if(items.length == 1){
+	   			$(".center").show();
+	   		}else{
+	   			$(".center").hide();
+	   		}
+
 		});
 	</script>
-	
 	<h5 id="info-message"></h5>
 	<div id="main" class="slideshow-container"></div>
- 
+<?php 
+}
+?>
+	
+ 	<div style="display: none;" class="center">
+ 		<button style=" margin:auto;" class="review"><a href="review.php">Review</a></button>
+ 	</div>
 </body>
 </html>
 
@@ -346,27 +360,5 @@ if (!isset($_SESSION['student_room_id'])&&!isset($_SESSION['student_room_name'])
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<?php 
-}
-?>
 
 

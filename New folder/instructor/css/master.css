@@ -1,0 +1,13 @@
+/*master.css*/
+
+#exam-div{
+	margin: 5px;
+}
+thead>tr{
+	background-color: #c1d6dc;
+}
+
+tr:nth-child(even) {
+    background-color: #caeef9;
+
+}
