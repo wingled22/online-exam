@@ -59,7 +59,7 @@ if (!isset($_SESSION['student_room_id'])&&!isset($_SESSION['student_room_name'])
 	                        echo " item_choices : [";
 	                            echo "'".$row->item_answer."', ";
 	                            echo "'".$row->item_choice1."', ";
-	                            echo "' ".$row->item_choice2."', ";
+	                            echo "'".$row->item_choice2."', ";
 	                            echo "'".$row->item_choice3."'";
 	                            echo "] ";
 	                        echo "} ,";
@@ -179,13 +179,13 @@ if (!isset($_SESSION['student_room_id'])&&!isset($_SESSION['student_room_name'])
 
 		   				string_to_be_html = string_to_be_html + "<form class=\"form\">";
 		   				
-	  					string_to_be_html = string_to_be_html + "<div><input type=\'button\' class=\'input\' name=\'" + items[i].item_id + "\' value=\'"+ arr[0] + "\'> </div>";
+	  					string_to_be_html = string_to_be_html + "<div><button class=\"" + items[i].item_id + "\"> "+ arr[0] + " </button></div>";
 						
-						string_to_be_html = string_to_be_html + "<div><input type=\'button\' class=\'input\' name=\'" + items[i].item_id + "\' value=\'"+ arr[1] + "\'> </div>";
+						string_to_be_html = string_to_be_html + "<div><button class=\"" + items[i].item_id + "\"> "+ arr[1] + " </button></div>";
 						
-						 string_to_be_html = string_to_be_html + "<div><input type=\'button\' class=\'input\' name=\'" + items[i].item_id + "\' value=\'"+ arr[2] + "\'> </div>";
+						 string_to_be_html = string_to_be_html + "<div><button class=\"" + items[i].item_id + "\"> "+ arr[2] + " </button></div>";
 						
-						 string_to_be_html = string_to_be_html + "<div><input type=\'button\' class=\'input\' name=\'" + items[i].item_id + "\' value=\'"+ arr[3] + "\'> </div>";
+						 string_to_be_html = string_to_be_html + "<div><button class=\"" + items[i].item_id + "\"> "+ arr[3] + " </button></div>";
 						string_to_be_html = string_to_be_html + "</form>";
 		   			}else if(items[i].item_qtn_type == "True_or_false"){
 		   				string_to_be_html = string_to_be_html + "<form class=\"form\">";
@@ -324,6 +324,15 @@ if (!isset($_SESSION['student_room_id'])&&!isset($_SESSION['student_room_name'])
 
 				
 			}
+
+			$('form div button').click(function(event){
+				event.preventDefault();
+
+				var buttons = $(this).closest("form");
+
+				buttons.children('div').removeClass('selected');
+				$(this).closest('div').addClass('selected');
+			});
 		});
 	</script>
 	
