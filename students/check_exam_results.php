@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>OCES | Students-Check exam results</title>
+	<title>OES | Students-Check exam results</title>
 	<link rel="stylesheet" type="text/css" href="css/check-exam-results.css">
 </head>
 <body>
 	<div id="banner">
-		<b>OCES - Online Classroom Examination System</b>
+		<b>OES - Online Examination System</b>
 	</div>
 
 

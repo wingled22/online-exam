@@ -1,7 +1,7 @@
 body{
 	margin: 0px;
 	padding: 0px;
-	background-color: #f1f1f1;
+	background-color:blue;
 	font-family: Arial , sans-serif;	
 }
 
@@ -14,7 +14,7 @@ body{
 	width: 100%; 
 
 	color: white;
-	background-color: #455387;
+	background-color: green;
 	
 
 
@@ -41,7 +41,7 @@ tr:nth-child(even) {
 th{
     margin: 10px;
     padding: 10px;
-    background-color: #48d3fdd9;
+    background-color: blue;
     
 }
 
@@ -108,7 +108,7 @@ button#load_more{
 
 	min-height: 400px;
 	padding: 10px;
-	background-color: #e0e0e0;
+	background-color: red;
 
 }
 

@@ -15,13 +15,13 @@ if (isset($_GET['err'])) {
 <!DOCTYPE html>
 <html>
 <head>
-	<title>OCES</title>
+	<title>OES</title>
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 
 </head>
 <body>
 	<div id="banner">
-		<b>OCES - Online Classroom Examination System</b>
+		<b>OES - Online Examination System</b>
 	</div>
 	
 	<div class="center-div">

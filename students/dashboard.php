@@ -9,14 +9,14 @@ if (!isset($_SESSION['student_id'])) {
 <!DOCTYPE html>
 <html>
 <head>
-	<title>OCES | Students</title>
+	<title>OES | Students</title>
     <link rel="stylesheet" type="text/css" href="css/dashboard.css">
 	
 </head>
 <body>
 
 	<div id="banner">
-		<b>OCES - Online Classroom Examination System</b>
+		<b>OES - Online Examination System</b>
 	</div>
 
 	 <br>

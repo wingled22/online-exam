@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>OCES | Student-Sign Up</title>
+	<title>OES | Student-Sign Up</title>
 	<link rel="stylesheet" type="text/css" href="css/sign-up.css">
 </head>
 <body>
 	<div id="banner">
-		<b>OCES - Online Classroom Examination System</b>
+		<b>OES - Online Examination System</b>
 	</div>
 	
 	<div id="center-box">

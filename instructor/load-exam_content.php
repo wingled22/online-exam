@@ -56,7 +56,7 @@ session_start();
                     <table>
                         <thead>
                             <tr>
-                                <th>ID</th>
+                                <!-- <th>ID</th> -->
                                 <th>Title</th>
                                 <th>Description</th>
                                 <th>Options</th>
@@ -66,7 +66,7 @@ session_start();
                     <?php
                                     while($row = mysqli_fetch_object($result)) {
                                       echo "<tr class=\"table-rows\">";
-                                      echo "<td class=\"exam_id\">".$row->exam_id."</td>";
+                                      // echo "<td class=\"exam_id\">".$row->exam_id."</td>";
                                       echo "<td class=\"exam_title\">".$row->exam_title."</td>";
                                       echo "<td class=\"exam_description\">".$row->exam_description."</td>";
                                       echo "<td>";

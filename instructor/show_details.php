@@ -23,8 +23,10 @@
     </div>
     <script type="text/javascript" src="javascript/jquery-3.3.1.js"></script>
     <style type="text/css">
+    
+
     .item_answer{
-        background: blue;
+        /*background: blue;*/
     }
     
 

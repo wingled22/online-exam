@@ -10,13 +10,13 @@ if (!isset($_SESSION['student_room_id'])&&!isset($_SESSION['student_room_name'])
 <!DOCTYPE html>
 <html>
 <head>
-	<title>OCES | Take Exam</title>
+	<title>OES | Take Exam</title>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
 
 	<div id="banner">
-		<b>OCES - Online Classroom Examination System</b>
+		<b>OES - Online Examination System</b>
 	</div>
 
 	<script type="text/javascript" src="javascript/jquery-3.3.1.js"></script>
@@ -348,11 +348,37 @@ if (!isset($_SESSION['student_room_id'])&&!isset($_SESSION['student_room_name'])
 	<div id="main" class="slideshow-container"></div>
 <?php 
 }
+
+ $sql ="SELECT * FROM rooms where room_id =".$_SESSION['student_room_id'];
+$conn = mysqli_connect("localhost", "root", "", "sad");
+
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}else{
+   
+    $result = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($result) > 0) {
+	while($row = mysqli_fetch_object($result)) {
+  		if($row->reviewable == 1){
+			echo "<div style=\"display: none;\" class=\"center\">";
+ 			echo	"<button style=\" margin:auto;\" class=\"review\"><a href=\"review.php\">Review</a></button>";
+ 			echo "</div>";
+  		}
+
+    }
+}
+}
+
+
+
+
+
+
 ?>
-	
- 	<div style="display: none;" class="center">
- 		<button style=" margin:auto;" class="review"><a href="review.php">Review</a></button>
- 	</div>
+
+
 </body>
 </html>
 
