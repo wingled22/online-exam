@@ -1,7 +1,7 @@
 <?php 
 session_start();
 error_reporting(-1);
-print_r($_SESSION);
+// print_r($_SESSION);
 if (!isset($_SESSION['student_room_id'])&&!isset($_SESSION['student_room_name'])&&!isset($_SESSION['student_exam_id'])){
 	header('location:dashboard.php');
 }else{
@@ -75,19 +75,18 @@ if (!isset($_SESSION['student_room_id'])&&!isset($_SESSION['student_room_name'])
 	                }
 	            }
 		   		?>
+
+
 		   	}
 ///////////end of code for the getting exam ////////////////////////////////////////////////////////////////////
 
 
-			//use the getExamItems method
 	        getExamItems();
-	        //after calling this method the items[{}] was created
 
 
 			function getExamItemsAnswered(){
 				// the php code will get the exam_details or the exam questions
 		   		<?php 
-				// $sql ="SELECT * FROM exam_result_details WHERE room_id=" . $_SESSION['student_room_id'] . " AND student_id = " . $_SESSION['student_id'] ;
 				$sql = "SELECT * FROM `exam_result_details` WHERE room_id = ". $_SESSION['student_room_id'] ." AND student_id=". $_SESSION['student_id'] ;
 	            $conn = mysqli_connect("localhost", "root", "", "sad");
 	            // Check connection
@@ -99,42 +98,48 @@ if (!isset($_SESSION['student_room_id'])&&!isset($_SESSION['student_room_name'])
 
 	                if (mysqli_num_rows($result) > 0) {
 	                    $counter = 0;
-	                    //make a javascript variable using php and name it as items, type array of object
 	                    echo "answered_items = [";
-	                    // loop so that we can store all the exam details to the items[{}]
 	                    while($row = mysqli_fetch_object($result)) {
 	                        echo "{";
 	                        echo "item_id : ".$row->item_id."";
 	                        echo "} ,";
 	                        
 	                    }
-	                //when the loop end we need to specify the last element of items[] array as {end:end}
 	                echo "{end : 'end'}";
 	                echo "];\n";
 	                } else {
-	                	// if there is no value the items will be equal to no_val string
 	                    echo "answered_items = null;";
 
 	                }
 	            }
 		   		?>
-		   		answered_items.pop();
-
 		   	}
 
 		   	getExamItemsAnswered();
 
 		   	function removeAnsweredItems(argument) {
-		   		for (var i = 0; i < answered_items.length; i++) {
-		   			console.log(answered_items[i].item_id);
-		   			var index_to_remove = items.findIndex(item => item === answered_items[i].item_id);
+		   		var counter= 0;
+	   			items.forEach(function(item){
+		   			for (var i = 0; i < answered_items.length-1; i++) {
+		   				if(item.item_id === answered_items[i].item_id){
+		   					console.log(item.item_id);
+		   					items.splice(counter,1);
+		   				}
+		   			}
 
-		   			console.log(index_to_remove);
-		   			
-		   		}
+
+	   				counter++;
+	   			});
+	   			
 		   	}
 
-		   	removeAnsweredItems();
+		   	
+	   		if (answered_items == null){}else{
+	   			for (var i = 0; i < answered_items.length; i++) {
+		   			removeAnsweredItems();
+		   		}
+	   		}
+
 
 
 ///////////code for the shuffle //////////////////////////////////////////////////////////////////// 	        
