@@ -118,13 +118,23 @@ if (!isset($_SESSION['student_room_id'])&&!isset($_SESSION['student_room_name'])
 	                }
 	            }
 		   		?>
+		   		answered_items.pop();
+
 		   	}
 
 		   	getExamItemsAnswered();
 
 		   	function removeAnsweredItems(argument) {
-		   		// body...
+		   		for (var i = 0; i < answered_items.length; i++) {
+		   			console.log(answered_items[i].item_id);
+		   			var index_to_remove = items.findIndex(item => item === answered_items[i].item_id);
+
+		   			console.log(index_to_remove);
+		   			
+		   		}
 		   	}
+
+		   	removeAnsweredItems();
 
 
 ///////////code for the shuffle //////////////////////////////////////////////////////////////////// 	        
@@ -140,24 +150,15 @@ if (!isset($_SESSION['student_room_id'])&&!isset($_SESSION['student_room_name'])
 					temporaryValue = array[currentIndex];
 					array[currentIndex] = array[randomIndex];
 					array[randomIndex] = temporaryValue;
-			
+
 				}
 
 				return array;
 			}
-///////////end for the shuffle //////////////////////////////////////////////////////////////////// 
 
-			//to make all the items shuffled call the shuffle() method and add items
-			//as a parameter shuffle(items); and store it on the items[] and this time 
-			//the items var was shuffled
 			items = shuffle(items);
 
-			//make all of the items[] elements print on the screeen!!!!!
-			//first the gameplan is to make thme as a one string variable and then
-			//print them to the screen using jQuery .html() method.
 
-///////////////convert the element to be a string/////////////////////////////////////////////////////////////////////
-			//so make a loop that read the items[] elements and store them on the string;
 	        for(var i = 0; i< items.length; i++){
 	        	if(items[i].end == "end"){
 
