@@ -122,7 +122,9 @@ if (!isset($_SESSION['student_room_id'])&&!isset($_SESSION['student_room_name'])
 
 		   	getExamItemsAnswered();
 
-		   	
+		   	function removeAnsweredItems(argument) {
+		   		// body...
+		   	}
 
 
 ///////////code for the shuffle //////////////////////////////////////////////////////////////////// 	        
