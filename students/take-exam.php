@@ -130,7 +130,6 @@ if (!isset($_SESSION['student_room_id'])&&!isset($_SESSION['student_room_name'])
 ///////////code for the shuffle //////////////////////////////////////////////////////////////////// 	        
 	        function shuffle(array) {
 				var currentIndex = array.length, temporaryValue, randomIndex;
-
 				// While there remain elements to shuffle...
 				while (0 !== currentIndex) {
 					// Pick a remaining element...
@@ -141,6 +140,7 @@ if (!isset($_SESSION['student_room_id'])&&!isset($_SESSION['student_room_name'])
 					temporaryValue = array[currentIndex];
 					array[currentIndex] = array[randomIndex];
 					array[randomIndex] = temporaryValue;
+			
 				}
 
 				return array;
