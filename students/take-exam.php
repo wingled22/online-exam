@@ -291,52 +291,46 @@ if (!isset($_SESSION['student_room_id'])&&!isset($_SESSION['student_room_name'])
 
 				var item_id = parseInt($(questions[slideIndex-1]).find('.item_id').text());;
 				var ans;
-				if($(questions[slideIndex-1]).find('form').length ){
 
-					if($(questions[slideIndex-1]).find('form.form').has('div').length ) {
+				ans = $(questions[slideIndex-1]).find('div input.input:checked').val();
+				// if($(questions[slideIndex-1]).find('form').length ){
+
+				// 	if($(questions[slideIndex-1]).find('form.form').has('div').length ) {
 						
-						ans = $(questions[slideIndex-1]).find('div input.input:checked').val();
-						if(ans == undefined){
-							ans=""
-						}	
-					}else{
-						ans = $(questions[slideIndex-1]).find('textarea').val();					
-					}
-				}else{
-					ans = '';
-				}
+				// 		ans = $(questions[slideIndex-1]).find('div input.input:checked').val();
+				// 		if(ans == undefined){
+				// 			ans=""
+				// 		}	
+				// 	}else{
+				// 		ans = $(questions[slideIndex-1]).find('textarea').val();					
+				// 	}
+				// }else{
+				// 	ans = '';
+				// }
 
 				console.log(item_id +' : '+ ans);
 
-				$.ajax({
-                        url:    'send_answer.php',
-                        method: 'post',
-                        data: {
-                            student_id 		:<?php echo $_SESSION['student_id'];?>,
-                            room_id 		:<?php echo $_SESSION['student_room_id'];?>,
-                            item_id 		:item_id,
-                            answer 			:ans
-                        },
-                        datatype: 'text',
-                        success: function(string){
-                        }
-                });
+				// $.ajax({
+    //                     url:    'send_answer.php',
+    //                     method: 'post',
+    //                     data: {
+    //                         student_id 		:<?php echo $_SESSION['student_id'];?>,
+    //                         room_id 		:<?php echo $_SESSION['student_room_id'];?>,
+    //                         item_id 		:item_id,
+    //                         answer 			:ans
+    //                     },
+    //                     datatype: 'text',
+    //                     success: function(string){
+    //                     }
+    //             });
 
 				
 			}
-
-
-
-
-
-
 		});
 	</script>
 	
 	<h5 id="info-message"></h5>
-	<div id="main" class="slideshow-container">
-		
-	</div>
+	<div id="main" class="slideshow-container"></div>
  
 </body>
 </html>

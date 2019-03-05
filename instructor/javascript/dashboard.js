@@ -200,6 +200,7 @@
                         }
                     })
         }
+
         
 
         function roomCancel(){
@@ -230,6 +231,46 @@
             }
             
         }
+
+       
+        function reviewable_on(event) {
+            event.preventDefault();
+            roomId = $(this).closest('tr').find('.room_id').text();
+            console.log(roomId);
+
+            $.ajax({
+                        url:    'reviewable_on.php',
+                        method: 'post',
+                        data: {
+                            room_id : roomId
+                        },
+                        datatype: 'text',
+                        success: function(string){
+                           $("#info-message").html(string);
+                        }
+                    })
+        }
+
+
+        function reviewable_off(event) {
+            event.preventDefault();
+            roomId = $(this).closest('tr').find('.room_id').text();
+            console.log(roomId);
+
+            $.ajax({
+                        url:    'reviewable_off.php',
+                        method: 'post',
+                        data: {
+                            room_id : roomId
+                        },
+                        datatype: 'text',
+                        success: function(string){
+                           $("#info-message").html(string);
+                        }
+                    })
+        }
+
+
         $(document).delegate('#add_exam_room' , 'click', addExamRoom);
         $(document).delegate('#add_room_cancel' , 'click', addRoomCancel);
         $(document).delegate('#add_room_submit' , 'click', addRoomSubmit);
@@ -238,6 +279,9 @@
         $(document).delegate('.deactivate_room' , 'click', deactivateRoom);
         $(document).delegate('button#room_cancel' , 'click', roomCancel);
         $(document).delegate('button#room_submit' , 'click', roomSubmit);
+
+        $(document).delegate('.reviewable_on' , 'click', reviewable_on);
+        $(document).delegate('.reviewable_off' , 'click', reviewable_off);
         
 
         function hideFirstTD(){
@@ -276,6 +320,7 @@
         }
 
         $('.tabs button#result-tab').click(loadResults);
+
 
 
 

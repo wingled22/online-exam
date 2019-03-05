@@ -66,9 +66,9 @@
                                 }
 
                                 if($row->reviewable == 0 ) {
-                                    echo "<a class=\"\" href=\"\">| reviewable off</a>";
+                                    echo "<a class=\"reviewable_on\" href=\"\">| reviewable is off</a>";
                                 }else if($row->reviewable == 1){
-                                    echo "<a class=\"\" href=\"\">| reviewable on</a>";
+                                    echo "<a class=\"reviewable_off\" href=\"\">| reviewable is on</a>";
                                 }
                                 echo "</td>";
                                 echo "</tr>";
