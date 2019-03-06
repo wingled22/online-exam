@@ -179,13 +179,13 @@ if (!isset($_SESSION['student_room_id'])&&!isset($_SESSION['student_room_name'])
 
 		   				string_to_be_html = string_to_be_html + "<form class=\"form\">";
 		   				
-	  					string_to_be_html = string_to_be_html + "<div><input type=\'button\' class=\'input\' name=\'" + items[i].item_id + "\' value=\'"+ arr[0] + "\'> </div>";
+	  					string_to_be_html = string_to_be_html + "<div><input type=\'radio\' class=\'input\' name=\'" + items[i].item_id + "\' value=\'"+ arr[0] + "\'> </div>";
 						
-						string_to_be_html = string_to_be_html + "<div><input type=\'button\' class=\'input\' name=\'" + items[i].item_id + "\' value=\'"+ arr[1] + "\'> </div>";
+						string_to_be_html = string_to_be_html + "<div><input type=\'radio\' class=\'input\' name=\'" + items[i].item_id + "\' value=\'"+ arr[1] + "\'> </div>";
 						
-						 string_to_be_html = string_to_be_html + "<div><input type=\'button\' class=\'input\' name=\'" + items[i].item_id + "\' value=\'"+ arr[2] + "\'> </div>";
+						 string_to_be_html = string_to_be_html + "<div><input type=\'radio\' class=\'input\' name=\'" + items[i].item_id + "\' value=\'"+ arr[2] + "\'> </div>";
 						
-						 string_to_be_html = string_to_be_html + "<div><input type=\'button\' class=\'input\' name=\'" + items[i].item_id + "\' value=\'"+ arr[3] + "\'> </div>";
+						 string_to_be_html = string_to_be_html + "<div><input type=\'radio\' class=\'input\' name=\'" + items[i].item_id + "\' value=\'"+ arr[3] + "\'> </div>";
 						string_to_be_html = string_to_be_html + "</form>";
 		   			}else if(items[i].item_qtn_type == "True_or_false"){
 		   				string_to_be_html = string_to_be_html + "<form class=\"form\">";
