@@ -1,0 +1,208 @@
+body{
+	margin: 0px;
+	padding: 0px;
+	background-color: #f1f1f1;
+	font-family: Arial , sans-serif;	
+}
+
+
+#banner{
+	position: static;
+	top: 0px;
+
+	height: 60px;
+	width: 100%; 
+
+	color: white;
+	background-color: #455387;
+	
+
+
+	line-height: 60px;
+	font-size: 20px;
+}
+
+#banner b{
+	padding-left: 30px;
+}
+
+
+div#exam_details_table{
+	margin: auto;
+	width: 90%;
+}
+
+table{
+	text-align: center;
+	width: 100%;
+}
+
+tr:nth-child(even) {
+    background-color: #c3c3c3;
+}
+
+
+th{
+    width: 200px;	
+    margin: 10px;
+    padding: 10px;
+    background-color: #48d3fdd9;
+
+    overflow: hidden;
+
+}
+
+td{
+	width: 200px;
+	overflow: hidden;
+}
+
+
+table tbody tr td a{
+	text-decoration: none;
+}
+
+
+#info-message{
+	text-align: center;
+	margin: auto;
+    width: 50%;
+    color: #f92626;
+}
+
+
+form#add-exam{
+	margin: auto;
+	width: 80%;
+	margin-top: 5px;
+	padding: 5px;
+	border: solid 3px #75d6f3;
+	border-radius: 5px;
+}
+
+form#add-exam input{
+	width: 98.8%;
+	padding: 5px;
+	margin-top: 5px;
+
+	font-size: 20px;
+	line-height: 20px;
+	margin-top: 10px; 
+	border-style: hidden;
+	border-radius : 2px;
+}
+form#add-exam select{
+	width: 98.8%;
+	padding: 5px;
+	margin-top: 5px;
+	font-size: 20px;
+	line-height: 20px;
+	margin-top: 10px; 
+	border-style: hidden;
+	border-radius : 2px;
+
+}
+form#add-exam textarea{
+	width: 98.8%;
+	height: 50px;
+	padding: 5px;
+	margin-top: 5px;
+	font-size: 20px;
+	line-height: 20px;
+	margin-top: 10px; 
+	border-style: hidden;
+	border-radius : 2px;
+
+}form#add-exam button{
+	width: 100%;
+	height: 50px;
+	padding: 5px;
+	margin-top: 5px;
+	font-size: 20px;
+	line-height: 20px;
+	margin-top: 10px; 
+	border-style: hidden;
+	border-radius : 2px;
+
+}
+
+dialog{
+	/*position: fixed;*/
+	padding: 10px;
+	float: left;
+	width: 50%;
+	height: auto;	
+	top: 40px;
+
+	background-color: #f1f1f1;
+}
+
+
+dialog form{
+	margin: 0px;
+	margin-top: 5px;
+	padding: 5px;
+	border-radius: 5px;
+}
+
+
+dialog form input{
+	width: 98.8%;
+	padding: 5px;
+	margin-top: 5px;
+	font-size: 15px;
+	line-height: 15px;
+	margin-top: 10px; 
+	border-style: hidden;
+	border-radius : 2px;
+}
+
+dialog form select{
+	width: 98.8%;
+	padding: 5px;
+	margin-top: 5px;
+	font-size: 15px;
+	line-height: 15px;
+	margin-top: 10px; 
+	border-style: hidden;
+	border-radius : 2px;
+
+}
+
+dialog form textarea{
+	width: 98.8%;
+	height: 30px;
+	padding: 5px;
+	margin-top: 5px;
+	font-size: 15px;
+	line-height: 15px;
+	margin-top: 10px; 
+	border-style: hidden;
+	border-radius : 2px;
+}
+
+dialog form menu{
+	padding: 0px;
+}
+
+dialog form button{
+	width: 98.8%;
+	height: 50px;
+	padding: 0px;
+	margin-top: 5px;
+	font-size: 15px;
+	line-height: 15px;
+	margin-top: 10px; 
+	border-style: hidden;
+	border-radius : 2px;
+
+}
+
+@media(max-width: 600px){
+
+	div#banner b{
+		font-size: 14px;
+
+	}
+
+}
